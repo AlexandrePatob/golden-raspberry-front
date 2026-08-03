@@ -8,7 +8,7 @@ export class ApiError extends Error {
   }
 }
 
-const baseUrl = import.meta.env.VITE_API_BASE_URL ?? 'https://challenge.outsera.tech'
+const baseUrl = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3000'
 
 export async function get<T>(
   path: string,

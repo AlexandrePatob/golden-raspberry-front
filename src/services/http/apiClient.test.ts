@@ -8,7 +8,7 @@ describe('apiClient', () => {
       .mockResolvedValue(new Response(JSON.stringify({ id: 1 }), { status: 200 }))
 
     await expect(get('/api/movies', { page: 0, winner: true })).resolves.toEqual({ id: 1 })
-    expect(String(fetchMock.mock.calls[0][0])).toContain('page=0&winner=true')
+    expect(String(fetchMock.mock.calls[0][0])).toContain('/api/movies?page=0&winner=true')
     expect(fetchMock).toHaveBeenCalledWith(
       expect.anything(),
       expect.objectContaining({ headers: { Accept: 'application/json' } }),
